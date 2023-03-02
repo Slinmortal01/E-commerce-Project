@@ -1,0 +1,20 @@
+{
+    "name": "project/group2",
+    "description": "A simple beverage shop",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "Project\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Krivan Raul",
+            "email": "krivanrauladrian@gmail.com"
+        }
+    ],
+    "require": {
+      "ext-readline": "*",
+        "ext-pdo": "*"
+    }
+}
