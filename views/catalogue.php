@@ -49,13 +49,13 @@ $products = $repo->get_all();
 
         <?php foreach ($products as $product) : ?>
             <li>
-                <img src="/images/<?= random_int(1, 4) ?>.jpg" alt="Amazing"><br>
+                <img src="./images/<?= random_int(1, 4) ?>.jpg" alt="Amazing"><br>
                 <small style="font-size: 10px">Product ID #<?= $product->id() ?></small>
                 <p>Product Name: <?= $product->product_name() ?></p>
                 <p>Product Description: <?= $product->product_description() ?></p>
                 <p>Product Price: $<?= $product->product_price() ?></p>
                 <?=
-                "<a href='/index.php?action=AddToCart&id={$product->id()}&name={$product->product_name()}&
+                "<a href='index.php?action=AddToCart&id={$product->id()}&name={$product->product_name()}&
                             description={$product->product_description()}&price={$product->product_price()}'>Add to cart</a>";
                 ?>
                 <br>

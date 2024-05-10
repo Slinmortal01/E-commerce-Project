@@ -8,7 +8,7 @@ require_once __DIR__ . '/header.php';
 
 <h1>Cart</h1></div>
 
-<form action="/index.php?action=checkout" method="post">
+<form action="index.php?action=checkout" method="post">
 
     <hr />
 
@@ -29,19 +29,20 @@ require_once __DIR__ . '/header.php';
                 <td><?=$product->id ?><br></td>
                 <td><?=$product->name ?><br></td>
                 <td><?=$product->description ?><br></td>
-                <td> $<?=$product->price?><br></td>
-                <td><?=$product->quantity?><br></td>
+                <td> $<?=floatval($product->price) ?><br></td>
+                <td><?=intval($product->quantity)?><br></td>
                 <td>
                     <?=
-                    "<a href='/index.php?action=UpdateCart&id={$product->id}&quantity={$product->quantity}'>Update</a>";
+                    "<a href='index.php?action=UpdateCart&id={$product->id}&quantity={$product->quantity}'>Update</a>";
                     ?>
                 </td>
                 <td>
                     <?=
-                    "<a href='/index.php?action=DeleteFromCart&id={$product->id}'>Delete</a>";
+                    "<a href='index.php?action=DeleteFromCart&id={$product->id}'>Delete</a>";
                     ?>
                 </td>
             </tr>
+            
         <?php endforeach ?>
     </table>
     <br>

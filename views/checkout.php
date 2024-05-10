@@ -7,21 +7,19 @@ $products = $_SESSION['cart'];
 require_once __DIR__ . '/header.php';
 
 foreach ($products as $product) {
-    $prices[] = $product->price * $product->product_quantity;
+    $prices[] = $product->price * $product->quantity;
     $total = array_sum($prices);
-    $quantity = $product->quantity + $product->product_quantity;
+    $quantity = $product->quantity + $product->quantity;
 }
 
 ?>
-
-
 
 <div style="text-align: center;">
     <h1>Checkout</h1>
 </div>
 
 
-<form action="/index.php?action=createOrder" method="post">
+<form action="index.php?action=createOrder" method="post">
 
     <hr />
 
@@ -39,13 +37,13 @@ foreach ($products as $product) {
                 <td><?= $product->name ?></td>
                 <td><input type="hidden" name="quantity" value="<?= $product->quantity ?>" readonly> <?= $product->quantity ?></td>
                 <td><input type="hidden" name="price" value="<?= $product->quantity * $product->price  ?>" readonly>
-                    $<?= $product->quantity * $product->price  ?></td>
+                    <?= $product->quantity * $product->price  ?></td>
             <?php endforeach ?>
             </tr>
             <tr>
                 <td><b>Select Checkout Date:</b></td>
                 <td><input type="datetime-local" name="order_checkout_date" required><br></td>
-                <td><input type="hidden" name="order_total" value="<?= $total ?>" readonly><b>Total Order: $<?= "$" .  $total ?></b><br></td>
+                <td><input type="hidden" name="order_total" value="<?= $total ?>" readonly><b>Total Order: <?= "$" .  $total ?></b><br></td>
             </tr>
     </table>
     <br>

@@ -4,15 +4,17 @@ namespace Project\Entity;
 
 class Order
 {
-    private ?string $id;
+    private ?string $order_id;
+    private float $order_total;
+    private string $order_completed_at;
 
     public function __construct(
         ?string $id = '',
-        private float $order_total = 0,
+        private float $orderTotal = 0,
         private string $order_checkout_date = '',
     ) {
         $this->order_id = $id;
-        $this->order_total = $order_total;
+        $this->order_total = $orderTotal;
         $this->order_completed_at = $order_checkout_date;
     }
     public function order_id(): string

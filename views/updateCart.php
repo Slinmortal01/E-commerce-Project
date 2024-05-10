@@ -10,7 +10,7 @@ require_once __DIR__ . '/header.php';
 /** @var \Project\Entity\Product $product */
 ?>
 
-<form action="/index.php?action=UpdateCart" method="post">
+<form action="index.php?action=UpdateCart" method="post">
     <label>Product ID:<br>
         <input name="id" value="<?=$product->id() ?>" type="text" readonly/>
     </label>

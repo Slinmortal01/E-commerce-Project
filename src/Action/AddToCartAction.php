@@ -18,8 +18,8 @@ class AddToCartAction
         $product->id = $_GET['id'];
         $product->name = $_GET['name'];
         $product->description = $_GET['description'];
-        $product->price = $_GET['price'];
-        $product->quantity = 1;
+        $product->price = floatval($_GET['price']);
+        intval($product->quantity = 1);
 
         $productArrayDuplicate = array();
         $productArray = $_SESSION['cart'];

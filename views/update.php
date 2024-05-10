@@ -14,7 +14,7 @@ require_once __DIR__ . '/header.php';
 /** @var Product $product */
 ?>
 
-<form action="/index.php?action=update" method="post">
+<form action="index.php?action=update" method="post">
     <label>Product ID:<br>
         <input name="id" value="<?=$product->id() ?>" type="text" readonly/>
     </label>

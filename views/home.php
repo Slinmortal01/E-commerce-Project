@@ -11,7 +11,7 @@ require_once __DIR__ . '/header.php';
 <link rel="stylesheet" href="https://unpkg.com/modern-normalize">
 
 <body>
-    <form action="/index.php?action=create_product" method="post">
+    <form action="index.php?action=create_product" method="post">
         <label>Product Name:
             <input type="text" name="product_name" placeholder="Name..." required /><br><br>
         </label>
@@ -49,12 +49,12 @@ require_once __DIR__ . '/header.php';
                 <td align="center"><?= $product->product_quantity() ?></td>
                 <td align="center">
                     <?=
-                    "<a href='/index.php?action=update&id={$product->id()}'>Update</a>";
+                    "<a href='index.php?action=update&id={$product->id()}'>Update</a>";
                     ?>
                 </td>
                 <td align="center">
                     <?=
-                    "<a href='/index.php?action=delete&id={$product->id()}'>Delete</a>";
+                    "<a href='index.php?action=delete&id={$product->id()}'>Delete</a>";
                     ?>
                 </td>
             </tr>

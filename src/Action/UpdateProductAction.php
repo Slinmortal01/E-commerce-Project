@@ -22,7 +22,7 @@ class UpdateProductAction
             $productRepository = ProductRepositoryFactory::make();
             $productRepository->update();
 
-            header('Location: /index.php');
+            header('Location: index.php');
         }
         $id = (string)filter_input(INPUT_GET, 'id');
 

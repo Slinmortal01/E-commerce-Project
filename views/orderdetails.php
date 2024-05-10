@@ -5,7 +5,7 @@ use Project\Repository\ProductRepositoryFromPdo;
 use Project\Repository\OrderRepositoryFromPdo;
 
 
-define('PAGE_TITLE', 'Beverage Orders Details');
+define('PAGE_TITLE', 'Amazing Orders Details');
 
 require_once __DIR__ . '/header.php';
 
@@ -17,7 +17,7 @@ $orderProduct = $repo->getAllOrderProducts($idOrderProduct);
 
 <link rel="stylesheet" href="https://unpkg.com/modern-normalize">
 
-<h1>Beverage Management - <?= PAGE_TITLE ?></h1>
+<h1>Amazing - <?= PAGE_TITLE ?></h1>
 <table border="1">
     <tr>
         <th width="200">Order ID</th>

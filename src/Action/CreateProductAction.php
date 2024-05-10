@@ -18,6 +18,6 @@ class CreateProductAction
         $repo = ProductRepositoryFactory::make();
         $repo->create($product);
 
-        header('Location: /index.php');
+        header('Location: index.php');
     }
 }
