@@ -1,0 +1,46 @@
+header {
+    background-color: #2641CB;
+    padding: 0px 20px 0px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    height: 120px;
+}
+
+.logo img {
+    margin-left: 40px;
+    width: 150px;
+}
+
+.search {
+    flex-grow: 1;
+    margin: 0 200px;
+    position: relative;
+    display: flex;
+}
+
+.search input {
+    width: 90%;
+    padding: 8px 10px 8px 10px;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+}
+
+.search button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.search img {
+    width: 40px;
+}
+
+.cart img {
+    max-width: 40px;
+    margin: 10px;
+}

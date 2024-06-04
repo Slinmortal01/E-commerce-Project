@@ -1,0 +1,140 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 100vh;
+  height: 100vh;
+  background-image: url('../images/fundo_pag_cadastro.jpg');
+  background-size: cover; /* Redimensiona a imagem para cobrir todo o fundo */
+    background-position: center; /* Centraliza a imagem no fundo */
+    background-repeat: no-repeat; /* Evita que a imagem se repita */
+
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30vh;
+  padding-top: 8vh;
+  padding-bottom: 8vh;
+}
+
+.image-container img {
+  width: 60vh;
+}
+
+.register-container {
+  background-color: #2641CB;
+  padding: 15px 50px 25px 50px;
+  border-radius: 15px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 20px;
+}
+
+.register-container h1 {
+  font-size: 40px;
+  padding-bottom: 40px;
+}
+
+.register-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+}
+
+.register-container label {
+  margin-bottom: 5px;
+}
+
+.register-container input[type="email"],
+.register-container input[type="password"] {
+  padding: 10px;
+  border-radius: 3px;
+  border: 1px solid #ccc;
+  width: 100%;
+}
+
+.register span {
+  display: flex;
+}
+
+.register-container .remember {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.register-container button {
+  padding: 10px;
+  border: none;
+  border-radius: 3px;
+  background-color: #ffffff;
+  color: #2641CB;
+  cursor: pointer;
+}
+
+.register-container a {
+  color: white;
+  text-decoration: none;
+  margin-top: 10px;
+}
+
+.orOptions {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  display: flex;
+  align-items: center;
+}
+
+.orOptions img {
+  height: 10px;
+  width: 13vh;
+  filter: invert(100%) brightness(200%);
+}
+
+.orOptions span {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.options {
+  display: flex;
+  justify-content: space-between;
+  gap: 60px;
+}
+
+.options img {
+  width: 35px;
+}
+
+.options div {
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  padding-right: 20px;
+  font-size: 20px;
+  font-weight: bold;
+  border-radius: 2px;
+}
+
+.options span {
+  color: #2641CB;
+  text-align: center;
+  margin-left: 10px;
+}
+
+.options a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
