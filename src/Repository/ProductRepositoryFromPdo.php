@@ -2,7 +2,7 @@
 
 namespace Project\Repository;
 
-use Project\Entity\product;
+use Project\Entity\Product;
 use PDO;
 use Project\Factory\ProductRepositoryFactory;
 
