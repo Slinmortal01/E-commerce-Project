@@ -2,6 +2,11 @@
 
 require_once 'vendor/autoload.php';
 
+session_name('cart');
+session_start();
+
+$products = $_SESSION['cart'];
+
 use MercadoPago\Exceptions\MPApiException;
 use MercadoPago\Client\Payment\PaymentClient;
 use MercadoPago\Client\Preference\PreferenceClient;
@@ -9,17 +14,22 @@ use MercadoPago\MercadoPagoConfig;
 
 MercadoPagoConfig::setAccessToken("TEST-1925708012835145-060621-53b16c893adb9a0384ff9afda73ada36-1454364643");
 MercadoPagoConfig::setRuntimeEnviroment(MercadoPagoConfig::LOCAL);
-$client = new PaymentClient();
 
-$client = new PreferenceClient();
-$preference = $client->create([
-    "items" => [
-        [
-            "title" => "Teste",
-            "quantity" => 1,
-            "unit_price" => 599
-        ]
-    ],
+$paymentClient = new PaymentClient();
+$preferenceClient = new PreferenceClient();
+
+
+$itemList = [];
+foreach ($products as $product) {
+    $itemList[] = [
+        "title" => $product->name,
+        "quantity" => floatval($product->quantity),
+        "unit_price" => $product->price,
+    ];
+}
+
+$preference = $preferenceClient->create([
+    "items" => $itemList,
     "payment_methods" => [
         "excluded_payment_methods" => [
             ["id" => 'amex'],

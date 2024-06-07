@@ -19,7 +19,7 @@ foreach ($products as $product) {
 </div>
 
 
-<form action="index.php?action=createOrder" method="post">
+<form action="../PaymentResource.php" method="post">
 
     <hr />
 
