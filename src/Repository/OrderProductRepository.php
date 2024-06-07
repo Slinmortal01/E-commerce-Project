@@ -9,4 +9,3 @@ interface OrderProductRepository
     public function createOrderProduct(OrderProduct $orderProduct): void;
     public function getAllOrderProducts(string $idOrderProduct): array;
 }
-
