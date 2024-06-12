@@ -23,8 +23,8 @@ class CreateOrderAction
 
         $order = new Order(
             $orderId,
-            filter_input(INPUT_POST, 'order_total'),
-            filter_input(INPUT_POST, 'order_checkout_date'),
+            filter_input(INPUT_GET, 'order_total'),
+            filter_input(INPUT_GET, 'order_checkout_date'),
         );
 
         $repo = OrderRepositoryFactory::make();

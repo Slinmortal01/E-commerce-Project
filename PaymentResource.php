@@ -4,8 +4,12 @@ require_once 'vendor/autoload.php';
 
 session_name('cart');
 session_start();
-
+$total = floatval($_POST['order_total']);
+$date = $_POST['order_checkout_date'];
 $products = $_SESSION['cart'];
+$successUrl = "http://localhost/E-commerce-Project/public/index.php?action=createOrder&order_total={$total}&order_checkout_date={$date}";
+
+$failureUrl = "localhost\E-commerce-Project\public\index.php";
 
 use MercadoPago\Exceptions\MPApiException;
 use MercadoPago\Client\Payment\PaymentClient;
@@ -25,11 +29,16 @@ foreach ($products as $product) {
         "title" => $product->name,
         "quantity" => floatval($product->quantity),
         "unit_price" => $product->price,
+        "description" => $product->name,
     ];
 }
 
 $preference = $preferenceClient->create([
     "items" => $itemList,
+    "back_urls" => [
+        "success" => $successUrl,
+        "failure" => $failureUrl
+    ],
     "payment_methods" => [
         "excluded_payment_methods" => [
             ["id" => 'amex'],
