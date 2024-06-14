@@ -4,47 +4,72 @@ use Project\Factory\OrderProductRepositoryFactory;
 use Project\Repository\ProductRepositoryFromPdo;
 use Project\Repository\OrderRepositoryFromPdo;
 
-
 define('PAGE_TITLE', 'Amazing Orders Details');
 
 require_once __DIR__ . '/header.php';
 
-$repo = OrderProductRepositoryFactory::make();
 $idOrderProduct = (string)filter_input(INPUT_GET, 'id');
-$orderProduct = $repo->getAllOrderProducts($idOrderProduct);
 
 ?>
 
-<link rel="stylesheet" href="https://unpkg.com/modern-normalize">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+</head>
 
-<h1>Amazing - <?= PAGE_TITLE ?></h1>
-<table border="1">
-    <tr>
-        <th width="200">Order ID</th>
-        <th width="200">Product ID</th>
-        <th width="200">Product Name</th>
-        <th width="200">Product Price</th>
-        <th width="200">Total</th>
-        <th width="200">Checkout Date</th>
-    </tr>
+<body>
+    <main class="main-orderdetails">
+        <div class="orderdetails-progress-container">
+            <div class="orderdetails-images-container">
+                <img src="images/iconecompra.png" alt="icone_compra">
+                <img src="images/iconepag.png" alt="icone_pagamento">
+                <img src="images/iconepedidoenv.png" alt="icone_pedidoEnviado">
+                <img src="images/iconeentrega.png" alt="icone_entrega">
+            </div>
+            <div class="orderdetails-checkLine">
+                <div class="orderdetails-checkItem">
+                    <p>Pedido Realizado</p>
+                    <img src="images/verificadocinza.png" alt="verificado-cinza">
+                </div>
+                <div class="orderdetails-checkItem">
+                    <p>Pagamento Efetuado</p>
+                    <img src="images/verificadocinza.png" alt="verificado-cinza">
+                </div>
+                <div class="orderdetails-checkItem">
+                    <p>Pedido Enviado</p>
+                    <img src="images/verificadocinza.png" alt="verificado-cinza">
+                </div>
+                <div class="orderdetails-checkItem">
+                    <p>Pedido Entregue</p>
+                    <img src="images/verificadoverde.png" alt="verificado-cinza">
+                </div>
+            </div>
+            <div class="home-product-category-division">
+                    <img src="images/minus-big-symbol.png" alt=""><span></span>
+                <h2>Detalhes dos Pedidos</h2>
+                <span></span><img src="images/minus-big-symbol.png" alt="">
+            </div>
+            <div class="grid-container">
+                <div class="grid-item grid-header">ID do Pedido</div>
+                <div class="grid-item grid-header">ID do Produto</div>
+                <div class="grid-item grid-header">Nome do Produto</div>
+                <div class="grid-item grid-header">Preço do Produto</div>
+                <div class="grid-item grid-header">Total</div>
+                <div class="grid-item grid-header">Data da Compra</div>
 
-<?php foreach ($orderProduct as $item) : 
-   $id = $item->product_id();
-   $idOrder = $item->order_id();
-   $order = $repo->OrdersInformation($idOrder);
-   $product = $repo->ProductsInformation($id);
-    ?>    <tr>
-            <td align="center"><?= $item->order_id() ?></td>
-            <td align="center"><?= $item->product_id() ?></td>
-            <td align="center"><?= $product->product_name() ?></td>
-            <td align="center"><?= $product->product_price() ?></td>
-            <td align="center"><?= $order->order_total() ?></td>
-            <td align="center"><?= $order->order_completed_at() ?></td>
-   
-        </tr>
- <?php endforeach; ?>
-   
-    
-</table>
+                    <div class="grid-item">1</div>
+                    <div class="grid-item">2</div>
+                    <div class="grid-item" style="text-align: left; padding-left: 10px;">
+                        Rato de borracha
+                    </div>
+                    <div class="grid-item">129,99</div>
+                    <div class="grid-item">2000,00</div>
+                    <div class="grid-item">13/06/2024</div>
+            </div>
+        </div>
+    </main>
+</body>
 
-<?php require_once __DIR__ . '/footer.php' ?> 
+<?php require_once __DIR__ . '/footer.php'; ?>
